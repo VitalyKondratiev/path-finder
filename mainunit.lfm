@@ -1,0 +1,273 @@
+object mainForm: TmainForm
+  Left = 436
+  Height = 342
+  Top = 127
+  Width = 494
+  BorderStyle = bsToolWindow
+  Caption = 'Поиск пути'
+  ClientHeight = 342
+  ClientWidth = 494
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '1.2.6.0'
+  object fieldDrawGrid: TDrawGrid
+    Left = 5
+    Height = 304
+    Top = 0
+    Width = 304
+    Color = clGradientInactiveCaption
+    ColCount = 20
+    Columns = <    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end    
+      item
+        Title.Caption = 'Title'
+        Width = 15
+      end>
+    DefaultRowHeight = 15
+    ExtendedSelect = False
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 20
+    TabOrder = 0
+    OnDrawCell = fieldDrawGridDrawCell
+    OnMouseUp = fieldDrawGridMouseUp
+  end
+  object clearButton: TButton
+    Left = 5
+    Height = 25
+    Top = 312
+    Width = 88
+    Caption = 'Очистить'
+    OnClick = clearButtonClick
+    TabOrder = 1
+  end
+  object findButton: TButton
+    Left = 128
+    Height = 25
+    Top = 312
+    Width = 88
+    Caption = 'Найти'
+    Enabled = False
+    OnClick = findButtonClick
+    TabOrder = 2
+  end
+  object stopButton: TButton
+    Left = 221
+    Height = 25
+    Top = 312
+    Width = 88
+    Caption = 'Остановить'
+    Enabled = False
+    OnClick = stopButtonClick
+    TabOrder = 3
+  end
+  object fastestLabeledEdit: TLabeledEdit
+    Left = 320
+    Height = 23
+    Top = 104
+    Width = 168
+    EditLabel.AnchorSideLeft.Control = fastestLabeledEdit
+    EditLabel.AnchorSideRight.Control = fastestLabeledEdit
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = fastestLabeledEdit
+    EditLabel.Left = 320
+    EditLabel.Height = 15
+    EditLabel.Top = 86
+    EditLabel.Width = 168
+    EditLabel.Caption = 'Длина оптимального пути:'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 4
+    Text = 'Не вычислен'
+  end
+  object currentLabeledEdit: TLabeledEdit
+    Left = 320
+    Height = 23
+    Top = 18
+    Width = 168
+    EditLabel.AnchorSideLeft.Control = currentLabeledEdit
+    EditLabel.AnchorSideRight.Control = currentLabeledEdit
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = currentLabeledEdit
+    EditLabel.Left = 320
+    EditLabel.Height = 15
+    EditLabel.Top = 0
+    EditLabel.Width = 168
+    EditLabel.Caption = 'Длина вычисляемого пути:'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 5
+    Text = 'Путь не вычисляется'
+  end
+  object previewCheckBox: TCheckBox
+    Left = 320
+    Height = 19
+    Top = 176
+    Width = 103
+    Caption = 'Предпросмотр'
+    Checked = True
+    State = cbChecked
+    TabOrder = 6
+  end
+  object stepsLabeledEdit: TLabeledEdit
+    Left = 320
+    Height = 23
+    Top = 60
+    Width = 168
+    EditLabel.AnchorSideLeft.Control = stepsLabeledEdit
+    EditLabel.AnchorSideRight.Control = stepsLabeledEdit
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = stepsLabeledEdit
+    EditLabel.Left = 320
+    EditLabel.Height = 15
+    EditLabel.Top = 42
+    EditLabel.Width = 168
+    EditLabel.Caption = 'Общее количество ходов:'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 7
+    Text = '-'
+  end
+  object additionGroupBox: TGroupBox
+    Left = 320
+    Height = 117
+    Top = 220
+    Width = 168
+    Caption = 'Дополнительно'
+    ClientHeight = 99
+    ClientWidth = 164
+    TabOrder = 8
+    object allToWallButton: TButton
+      Left = 8
+      Height = 25
+      Top = 0
+      Width = 152
+      Caption = 'Залить все стеной'
+      OnClick = allToWallButtonClick
+      TabOrder = 0
+    end
+    object saveButton: TButton
+      Left = 8
+      Height = 25
+      Top = 48
+      Width = 152
+      Caption = 'Сохранить в файл'
+      OnClick = saveButtonClick
+      TabOrder = 1
+    end
+    object loadButton: TButton
+      Left = 8
+      Height = 25
+      Top = 72
+      Width = 152
+      Caption = 'Загрузить из файла'
+      OnClick = loadButtonClick
+      TabOrder = 2
+    end
+  end
+  object similarLabeledEdit: TLabeledEdit
+    Left = 320
+    Height = 23
+    Top = 148
+    Width = 168
+    EditLabel.AnchorSideLeft.Control = similarLabeledEdit
+    EditLabel.AnchorSideRight.Control = similarLabeledEdit
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = similarLabeledEdit
+    EditLabel.Left = 320
+    EditLabel.Height = 15
+    EditLabel.Top = 130
+    EditLabel.Width = 168
+    EditLabel.Caption = 'Одинаковый путь'
+    EditLabel.ParentColor = False
+    ReadOnly = True
+    TabOrder = 9
+    Text = 'Не вычислен'
+  end
+  object loadDialog: TOpenDialog
+    Filter = 'Файл Карты|*.mapfile'
+    left = 24
+    top = 8
+  end
+  object saveDialog: TSaveDialog
+    Filter = 'Файл Карты|*.mapfile'
+    left = 88
+    top = 8
+  end
+end
